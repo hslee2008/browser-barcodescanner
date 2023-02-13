@@ -1,6 +1,6 @@
 {
   "name": "browser-barcodescanner",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A browser API based barcode scanner",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
