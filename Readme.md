@@ -33,7 +33,9 @@ scanButton.addEventListener('click', () => {
   if (!file) return
 
   BrowserBarcodeScanner(['ean_13'], file, result => {
-    // Do something with result.res
+    // Do something with result.res (The barcode value)
+    // Do Something with result.corner (The corner points of the barcode)
+    // Do Something with result.box (The bounding box of the barcode)
   })
 })
 ```
@@ -50,21 +52,53 @@ scanButton.addEventListener('click', () => {
   })
 
   BrowserBarcodeScanner(['ean_13'], video, result => {
-    // Do something with result.res
+    // Do something with result.res (The barcode value)
+    // Do Something with result.corner (The corner points of the barcode)
+    // Do Something with result.box (The bounding box of the barcode)
   })
 })
 ```
+
+See https://developer.mozilla.org/en-US/docs/Web/API/BarcodeDetector/detect for more information about the result.
 
 # API
 
 ## BrowserBarcodeScanner
 
 ```ts
-async function BrowserBarcodeScanner(
-  formats: string[] = [],
-  file: File,
-  callback: () => void
-): {
-  res: string
+declare global {
+  interface Window {
+    BarcodeDetector: any
+  }
 }
+export declare function BrowserBarcodeScanner(
+  formats: string[],
+  object: File | HTMLVideoElement | HTMLImageElement | HTMLCanvasElement | null,
+  callback: (result: { res: string }) => void
+): Promise<void>
 ```
+
+# Contributing
+
+Contributing is always welcome!
+
+I cannot maintain this project alone, so please feel free to open issues and pull requests.
+
+## Testing
+
+If you are going to contribute, follow these steps
+
+```bash
+git clone https://github.com/HyunseungLee-Travis/browser-barcodescanner.git
+npm install
+cd playground
+yarn dev
+```
+
+In another terminal
+
+```bash
+lt --port 5173
+```
+
+Then, open the url in your mobile phone as the api is only supported on mobile devices.

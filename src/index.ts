@@ -11,7 +11,9 @@ function BarcodeScanner(callback, formats, object) {
 
   barcodeDetector.detect(object).then(barcodes => {
     callback({
-      res: barcodes[0].rawValue
+      res: barcodes[0].rawValue,
+      corner: barcodes[0].cornerPoints,
+      box: barcodes[0].boundingBox
     })
   })
 }
@@ -25,6 +27,17 @@ export async function BrowserBarcodeScanner(
   if (!('BarcodeDetector' in window))
     throw new Error('BarcodeDetector not supported')
 
+  // Check if the parameter sare valid
+  if (!Array.isArray(formats) || formats.length === 0)
+    throw new Error(
+      'Invalid formats, please provide at least one type of format. See https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API#supported_barcode_formats for a list of supported formats.'
+    )
+
+  if (object === null)
+    throw new Error(
+      'Invalid object, please provide a File, HTMLVideoElement, HTMLImageElement or HTMLCanvasElement.'
+    )
+
   // Check if the format is supported
   const supportedFormats = await window.BarcodeDetector.getSupportedFormats()
   const unsupportedFormats = formats.filter(
@@ -37,8 +50,6 @@ export async function BrowserBarcodeScanner(
         ', '
       )}`
     )
-
-  if (!object) throw new Error('Element or File to scan not provided')
 
   if (object instanceof File) {
     /* If the object is a file, we need to convert it to a data URL */

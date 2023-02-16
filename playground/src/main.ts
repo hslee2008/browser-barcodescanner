@@ -1,9 +1,9 @@
 // To test publish package
-import { BrowserBarcodeScanner } from 'browser-barcodescanner'
+//import { BrowserBarcodeScanner } from 'browser-barcodescanner'
 
-/* To test modified package,
+///* To test modified package,
 import { BrowserBarcodeScanner } from '../../src/index.ts'
-*/
+//*/
 
 import './style.css'
 
