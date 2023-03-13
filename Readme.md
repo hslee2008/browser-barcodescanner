@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-<img alt="logo" src="https://raw.githubusercontent.com/HyunseungLee-Travis/browser-barcodescanner/main/logo.png" width="200px" />
+<img alt="logo" src="https://raw.githubusercontent.com/hslee2008/browser-barcodescanner/main/logo.png" width="200px" />
 </div>
 
 <div align="center">
@@ -89,7 +89,7 @@ I cannot maintain this project alone, so please feel free to open issues and pul
 If you are going to contribute, follow these steps
 
 ```bash
-git clone https://github.com/HyunseungLee-Travis/browser-barcodescanner.git
+git clone https://github.com/hslee2008/browser-barcodescanner.git
 npm install
 cd playground
 yarn dev

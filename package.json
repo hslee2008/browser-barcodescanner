@@ -6,10 +6,10 @@
   "module": "dist/index.esm.js",
   "types": "dist/types/index.d.ts",
   "type": "module",
-  "author": "HyunseungLee-Travis <hyunseunglee2008@gmail.com>",
+  "author": "hslee2008 <hyunseunglee2008@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HyunseungLee-Travis/browser-barcodescanner.git"
+    "url": "git+https://github.com/hslee2008/browser-barcodescanner.git"
   },
   "files": [
     "dist",
@@ -24,9 +24,9 @@
     "bump-version": "npm version patch"
   },
   "bugs": {
-    "url": "https://github.com/HyunseungLee-Travis/browser-barcodescanner/issues"
+    "url": "https://github.com/hslee2008/browser-barcodescanner/issues"
   },
-  "homepage": "https://github.com/HyunseungLee-Travis/browser-barcodescanner#readme",
+  "homepage": "https://github.com/hslee2008/browser-barcodescanner#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-typescript": "^7.18.6",
